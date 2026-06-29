@@ -54,7 +54,7 @@ export default async function handler(req, res) {
       ``,
       `Thanks for reaching out. Brad got your message and will be in touch soon.`,
       ``,
-      `If it's urgent, call him directly at 440-315-3348. He picks up.`,
+      `If it's urgent, call him directly at 440-315-4438. He picks up.`,
       ``,
       `— Clean Construction LLC`,
       `  Lagrange, Ohio`,
