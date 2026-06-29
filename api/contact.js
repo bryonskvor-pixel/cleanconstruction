@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      from: 'Clean Construction <contact@remodel.guide>',
+      from: 'Clean Construction <contact@cleanconstructionllc.com>',
       to: 'bryon@remodel.guide',
       reply_to: email || undefined,
       subject: `Project inquiry: ${project_type || 'General'} — ${name}`,
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        from: 'Clean Construction <contact@remodel.guide>',
+        from: 'Brad Skvor <brad@cleanconstructionllc.com>',
         to: email,
         subject: `Got it — Brad will be in touch`,
         text: confirmText,
