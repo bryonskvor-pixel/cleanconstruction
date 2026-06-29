@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Additions | Clean Construction LLC | Lorain County Ohio</title>
+<meta name="description" content="Clean Construction LLC builds home additions in Lorain County, Ohio. Brad Skvor manages every phase — design through finish. 440-315-3348.">
+<link rel="canonical" href="https://cleanconstructionllc.com/additions.html">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<meta property="og:title" content="Home Additions | Clean Construction LLC">
+<meta property="og:description" content="One contractor. Every phase. Lorain County Ohio. 440-315-3348.">
+<meta property="og:image" content="https://cleanconstructionllc.com/images/addition-finished.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --deep:       #111111;
+  --deep-2:     #1a1a1a;
+  --accent:     #ce1141;
+  --warm-white: #f5f2ec;
+  --cream:      #faf8f4;
+  --muted:      #6b6860;
+  --border-acc: rgba(206,17,65,0.2);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep);
+  color: var(--warm-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PROGRESS ── */
+#progress {
+  position: fixed; top: 0; left: 0;
+  height: 2px; width: 0%;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.05s linear;
+  pointer-events: none;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 72px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 8000;
+  background: rgba(17,17,17,0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(206,17,65,0.15);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--warm-white);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.nav-logo small {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  font-weight: 400;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+.nav-links a {
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.55);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--warm-white); border-bottom-color: var(--accent); }
+.nav-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--warm-white);
+  color: var(--accent);
+  padding: 11px 22px;
+  text-decoration: none;
+  border: 1px solid var(--warm-white);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-cta:hover { background: transparent; color: var(--warm-white); }
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.burger span { display: block; width: 24px; height: 2px; background: var(--warm-white); transition: transform 0.25s, opacity 0.25s; }
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mob-nav {
+  display: none;
+  position: fixed; inset: 0;
+  background: var(--deep);
+  z-index: 7900;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+.mob-nav.open { display: flex; }
+.mob-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: var(--warm-white);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.mob-nav a:hover { color: var(--accent); }
+.mob-nav .mob-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--warm-white);
+  color: var(--accent);
+  padding: 14px 36px;
+  margin-top: 8px;
+}
+
+/* ── BACKGROUND STAGE ── */
+.bg-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+.bg-frame {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: saturate(0.45) brightness(0.55);
+  transition: opacity 1.6s cubic-bezier(0.4,0,0.2,1), filter 1.6s ease;
+}
+.bg-frame.active {
+  opacity: 1;
+  filter: saturate(0.5) brightness(0.52);
+}
+.bg-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 25%, transparent 68%, rgba(0,0,0,0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── PHASE INDICATOR ── */
+.phase-tag {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  z-index: 100;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.phase-tag.show { opacity: 1; }
+.phase-tag-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.phase-tag-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--warm-white);
+  font-weight: 500;
+}
+.phase-dots { display: flex; gap: 5px; justify-content: flex-end; margin-top: 6px; }
+.dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.18); transition: background 0.3s, transform 0.3s; }
+.dot.on { background: var(--accent); transform: scale(1.5); }
+
+/* ── SCROLL WRAP ── */
+.scroll-wrap { position: relative; z-index: 10; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 48px 80px;
+}
+.eyebrow {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 7vw, 6.2rem);
+  font-weight: 600;
+  line-height: 1.06;
+  color: var(--warm-white);
+  margin-bottom: 1.4rem;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(245,242,236,0.6);
+  max-width: 460px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.78;
+}
+.scroll-nudge {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  opacity: 0.3;
+  animation: nudge 2s ease-in-out infinite;
+}
+.scroll-nudge span { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--warm-white); }
+.scroll-line { width: 1px; height: 30px; background: linear-gradient(to bottom, var(--warm-white), transparent); }
+@keyframes nudge { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* ── SECTIONS ── */
+.sect {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 2rem;
+}
+.sect-inner { max-width: 580px; }
+.sect.left .sect-inner { margin-left: max(7vw, 2rem); }
+.sect.right .sect-inner { margin-left: auto; margin-right: max(7vw, 2rem); }
+.sect.center { justify-content: center; text-align: center; }
+.sect.center .sect-inner { margin: 0 auto; }
+
+.sect h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+}
+.sect h2 em { font-style: italic; color: var(--accent); }
+.sect p {
+  font-size: 0.97rem;
+  font-weight: 300;
+  color: rgba(245,242,236,0.68);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.rule { width: 36px; height: 2px; background: var(--accent); opacity: 0.7; margin: 1.2rem 0; }
+.center .rule { margin: 1.2rem auto; }
+
+/* ── PROCESS LIST ── */
+.proc { list-style: none; margin-top: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+.proc li {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(245,242,236,0.7);
+  line-height: 1.65;
+  align-items: flex-start;
+}
+.proc-n {
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  min-width: 22px;
+  padding-top: 0.28rem;
+  font-weight: 500;
+}
+
+/* ── CTA SECTION ── */
+.cta-sect {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+.cta-inner { max-width: 560px; }
+.cta-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 600;
+  color: var(--warm-white);
+  line-height: 1.06;
+  margin-bottom: 1rem;
+}
+.cta-inner h2 em { color: var(--accent); font-style: italic; }
+.cta-inner p { font-size: 1rem; color: rgba(245,242,236,0.5); line-height: 1.75; margin-bottom: 2rem; }
+.btn-primary {
+  display: inline-block;
+  background: var(--warm-white);
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  text-decoration: none;
+  border: 1px solid var(--warm-white);
+  margin-right: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-primary:hover { background: transparent; color: var(--warm-white); }
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: rgba(245,242,236,0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  text-decoration: none;
+  border: 1px solid rgba(245,242,236,0.18);
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: rgba(245,242,236,0.55); color: var(--warm-white); }
+
+/* ── REVEALS ── */
+.r { opacity: 0; transform: translateY(24px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.r.d1 { transition-delay: 0.1s; }
+.r.d2 { transition-delay: 0.22s; }
+.r.d3 { transition-delay: 0.36s; }
+.r.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .r, .bg-frame { transition: opacity 0.3s ease; } .r { transform: none; } .scroll-nudge { animation: none; } }
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 10;
+  background: #0a0a0a;
+  padding: 52px 48px 0;
+  border-top: 1px solid rgba(206,17,65,0.15);
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 52px;
+  padding-bottom: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.footer-logo small { font-family: 'DM Sans', sans-serif; font-size: 0.5rem; letter-spacing: 0.28em; color: var(--accent); font-weight: 400; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; font-style: italic; color: rgba(245,242,236,0.22); line-height: 1.55; max-width: 230px; }
+.fc h4 { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 18px; }
+.fc ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.fc ul a { font-size: 0.84rem; color: rgba(245,242,236,0.3); text-decoration: none; transition: color 0.18s; }
+.fc ul a:hover { color: rgba(245,242,236,0.7); }
+.footer-cta h4 { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 16px; }
+.footer-cta p { font-size: 0.84rem; color: rgba(245,242,236,0.3); margin-bottom: 16px; line-height: 1.65; }
+.footer-ph { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--warm-white); text-decoration: none; display: block; margin-bottom: 16px; transition: color 0.18s; }
+.footer-ph:hover { color: var(--accent); }
+.footer-btn { display: inline-block; border: 1px solid rgba(206,17,65,0.3); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 20px; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.footer-btn:hover { background: var(--accent); color: var(--warm-white); border-color: var(--accent); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-bottom p { font-size: 0.72rem; color: rgba(245,242,236,0.18); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 0.72rem; color: rgba(245,242,236,0.18); text-decoration: none; transition: color 0.18s; }
+.footer-legal a:hover { color: rgba(245,242,236,0.45); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .burger { display: flex; }
+  .sect.left .sect-inner, .sect.right .sect-inner { margin: 0 auto; }
+  .phase-tag { bottom: 1rem; right: 1rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  footer { padding: 40px 20px 0; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">Clean Construction<small>LLC &mdash; Lorain County, Ohio</small></a>
+  <ul class="nav-links">
+    <li><a href="/#process">How It Works</a></li>
+    <li><a href="/#portfolio">The Work</a></li>
+    <li><a href="/additions.html" class="active">Additions</a></li>
+    <li><a href="/#about">About Brad</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Start a Project</a>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-nav" id="mob-nav">
+  <a href="/" class="mob-link">Home</a>
+  <a href="/#process" class="mob-link">How It Works</a>
+  <a href="/#portfolio" class="mob-link">The Work</a>
+  <a href="/additions.html" class="mob-link">Additions</a>
+  <a href="/#about" class="mob-link">About Brad</a>
+  <a href="/#contact" class="mob-cta mob-link">Start a Project</a>
+</div>
+
+<div class="bg-stage" id="stage"></div>
+
+<div class="phase-tag" id="ptag">
+  <div class="phase-tag-label">Phase</div>
+  <div class="phase-tag-name" id="pname"></div>
+  <div class="phase-dots" id="pdots"></div>
+</div>
+
+<div class="scroll-wrap">
+
+  <section class="hero" data-phase="0">
+    <div>
+      <span class="eyebrow r">Home Additions — Lorain County, Ohio</span>
+      <h1 class="r d1">Your home,<br><em>made bigger.</em></h1>
+      <p class="hero-sub r d2">Most contractors hand the job off after the first phase. Brad doesn't. One number. One crew. Start to finish.</p>
+    </div>
+    <div class="scroll-nudge">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="sect left" data-phase="0">
+    <div class="sect-inner">
+      <span class="eyebrow r">Where It Starts</span>
+      <h2 class="r d1">Every addition starts as a conversation.</h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">Before anything gets drawn, Brad walks through your home with you. He wants to understand how you actually live in it — where the light comes from, how traffic moves through the kitchen, what you're gaining and what you can't lose.</p>
+      <p class="r d3">Most contractors start with a bid. Brad starts with questions. The plan that comes out of that first conversation is one you won't be surprised by six months later.</p>
+    </div>
+  </section>
+
+  <section class="sect right" data-phase="1">
+    <div class="sect-inner">
+      <span class="eyebrow r">The Existing Structure</span>
+      <h2 class="r d1">We start by understanding <em>what's already there.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">Before the first shovel, Brad walks the existing structure. Foundation, framing, mechanicals — all of it. He's building onto your home, not around it, and that distinction matters when it comes to load paths, drainage, and how the addition ties into what's already holding your house up.</p>
+      <p class="r d3">Lorain County winters are hard on foundations. Brad's seen enough of them to know what to look for before a problem becomes your problem.</p>
+    </div>
+  </section>
+
+  <section class="sect left" data-phase="2">
+    <div class="sect-inner">
+      <span class="eyebrow r">Site Preparation</span>
+      <h2 class="r d1">It's supposed to <em>look like this.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">Excavation is alarming if you've never been through it. Equipment shows up, your yard gets torn up, and for a stretch it looks like the whole project is going sideways. It's not.</p>
+      <p class="r d3">Brad's crew protects your existing landscaping, keeps access to your home clean throughout, and levels the site before they leave every day. The disruption is temporary. What comes out of it lasts decades.</p>
+    </div>
+  </section>
+
+  <section class="sect right" data-phase="3">
+    <div class="sect-inner">
+      <span class="eyebrow r">Foundation</span>
+      <h2 class="r d1">Built to last. <em>Tied to what's already there.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">The foundation of your addition is engineered to integrate with your existing structure. Concrete depth, anchor bolt placement, drainage — none of it is guessed at. Lorain County winters demand a foundation done right, and Brad has poured enough of them in this county to know exactly what right looks like.</p>
+      <ul class="proc r d3">
+        <li><span class="proc-n">01</span>Engineered to match your existing footprint and load</li>
+        <li><span class="proc-n">02</span>Proper drainage planned before the pour</li>
+        <li><span class="proc-n">03</span>Inspected and approved before framing begins</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sect left" data-phase="4">
+    <div class="sect-inner">
+      <span class="eyebrow r">Framing</span>
+      <h2 class="r d1">The skeleton rises. <em>You start to see it.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">Framing is the moment homeowners start believing the project is real. Walls go up, the roof takes shape, and the blueprints are suddenly standing in your backyard. Brad's crews are fast and precise, and they coordinate with mechanical subs from day one so nothing gets framed twice.</p>
+      <p class="r d3">Every gap in framing is a future problem in drywall, trim, or energy efficiency. Brad frames tight because he'll be the one finishing it.</p>
+    </div>
+  </section>
+
+  <section class="sect right" data-phase="5">
+    <div class="sect-inner">
+      <span class="eyebrow r">Rough-In</span>
+      <h2 class="r d1">The work you'll never see. <em>The work that matters most.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">Electrical, plumbing, HVAC. The rough-in phase disappears behind drywall, but it's where the quality of your addition actually lives. Brad uses licensed subs he's worked with for years — not whoever answers the phone. Code inspections pass. Every time.</p>
+      <p class="r d3">This is the phase most contractors rush. Brad doesn't. Getting it right here means you never open a wall later.</p>
+    </div>
+  </section>
+
+  <section class="sect left" data-phase="6">
+    <div class="sect-inner">
+      <span class="eyebrow r">Dried In</span>
+      <h2 class="r d1">Weathertight. <em>The turning point.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">When the house wrap goes on and the windows are set, something shifts on the job site. The addition starts looking like a room instead of a construction zone. The pace picks up. Everyone can see the finish line.</p>
+      <p class="r d3">Brad stages window orders early so there's no gap between framing and dried-in. Dead time in a schedule is money out of your pocket. He treats it that way.</p>
+    </div>
+  </section>
+
+  <section class="sect right" data-phase="7">
+    <div class="sect-inner">
+      <span class="eyebrow r">Exterior Complete</span>
+      <h2 class="r d1">Siding matched. Roofline tied in. <em>Almost there.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">The siding, soffit, fascia, and roofing on your addition are matched to your existing home. Close enough isn't good enough. If Brad has to special-order a discontinued profile, he does it. When it's finished, the addition should look like it was always there — because it was designed to be.</p>
+    </div>
+  </section>
+
+  <section class="cta-sect" data-phase="8">
+    <div class="cta-inner">
+      <span class="eyebrow r">The Finish Line</span>
+      <h2 class="r d1">Looks like it was <em>always there.</em></h2>
+      <div class="rule r d2"></div>
+      <p class="r d2">From the first conversation to the final walkthrough, Brad manages every phase of your addition. No handoffs. No subcontractor you've never met making decisions. One person accountable for the whole thing.</p>
+      <div class="r d3">
+        <a href="/#contact" class="btn-primary">Talk to Brad</a>
+        <a href="tel:4403153348" class="btn-outline">440-315-3348</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="footer-logo">Clean Construction<small>LLC &mdash; Lagrange, Ohio</small></a>
+      <p class="footer-tagline">From concrete to cap. We run the whole job.</p>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/additions.html">Home Additions</a></li>
+        <li><a href="/#portfolio">Ground-Up Builds</a></li>
+        <li><a href="/#portfolio">Concrete &amp; Foundations</a></li>
+        <li><a href="/#portfolio">Basements</a></li>
+        <li><a href="/#portfolio">Roofing</a></li>
+        <li><a href="/#portfolio">Retaining Walls</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/#process">How It Works</a></li>
+        <li><a href="/#portfolio">The Work</a></li>
+        <li><a href="/#about">About Brad</a></li>
+        <li><a href="/#contact">Start a Project</a></li>
+      </ul>
+    </div>
+    <div class="footer-cta">
+      <h4>Start a Project</h4>
+      <p>Every project starts with a conversation. Brad picks up the phone.</p>
+      <a href="tel:4403153348" class="footer-ph">440-315-3348</a>
+      <a href="/#contact" class="footer-btn">Send a message</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="yr"></span> Clean Construction LLC. Lagrange, Ohio. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Nav burger
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mob-nav');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobNav.classList.toggle('open');
+  document.body.style.overflow = mobNav.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.mob-link').forEach(l => {
+  l.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobNav.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Progress bar
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  prog.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
+}, {passive: true});
+
+// Background phase system
+const phases = [
+  { name: 'The Plan',     img: 'images/addition-blueprint.jpg'  },
+  { name: 'Before',       img: 'images/addition-before.jpg'     },
+  { name: 'Excavation',   img: 'images/addition-excavation.jpg' },
+  { name: 'Foundation',   img: 'images/addition-foundation.jpg' },
+  { name: 'Framing',      img: 'images/addition-framing.jpg'    },
+  { name: 'Rough-In',     img: 'images/addition-roughin.jpg'    },
+  { name: 'Dried In',     img: 'images/addition-driedin.jpg'    },
+  { name: 'Exterior',     img: 'images/addition-exterior.jpg'   },
+  { name: 'Complete',     img: 'images/addition-finished.jpg'   },
+];
+
+const stage = document.getElementById('stage');
+const ptag  = document.getElementById('ptag');
+const pname = document.getElementById('pname');
+const pdots = document.getElementById('pdots');
+
+const frames = phases.map(p => {
+  const d = document.createElement('div');
+  d.className = 'bg-frame';
+  d.style.backgroundImage = `url('${p.img}')`;
+  stage.appendChild(d);
+  return d;
+});
+
+const dots = phases.map(() => {
+  const d = document.createElement('div');
+  d.className = 'dot';
+  pdots.appendChild(d);
+  return d;
+});
+
+let currentPhase = -1;
+function setPhase(n) {
+  if (n === currentPhase) return;
+  currentPhase = n;
+  frames.forEach((f, i) => f.classList.toggle('active', i === n));
+  dots.forEach((d, i) => d.classList.toggle('on', i === n));
+  pname.textContent = phases[n].name;
+  ptag.classList.add('show');
+}
+
+const sects = document.querySelectorAll('[data-phase]');
+const revEls = document.querySelectorAll('.r');
+
+const phaseObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) setPhase(+e.target.dataset.phase);
+  });
+}, { threshold: 0.4 });
+
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+sects.forEach(s => phaseObs.observe(s));
+revEls.forEach(el => revObs.observe(el));
+</script>
+</body>
+</html>
