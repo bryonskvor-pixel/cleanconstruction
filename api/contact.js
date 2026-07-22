@@ -51,9 +51,8 @@ export default async function handler(req, res) {
   }
 
   // Best-effort: a ScopeWalk outage must never block the inquiry email.
-  let intakeDebug = 'ok';
   const leadPromise = createScopewalkLead({ name, phone, email, project_type, message })
-    .catch((err) => { intakeDebug = String(err && err.stack || err); console.error('ScopeWalk intake error:', err); });
+    .catch((err) => console.error('ScopeWalk intake error:', err));
 
   const headers = {
     Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
@@ -122,5 +121,5 @@ export default async function handler(req, res) {
   // must settle before we return (errors were already caught above).
   await leadPromise;
 
-  return res.status(200).json({ ok: true, debug_intake: intakeDebug });
+  return res.status(200).json({ ok: true });
 }
